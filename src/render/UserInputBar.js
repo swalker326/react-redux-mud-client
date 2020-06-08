@@ -56,20 +56,20 @@ export default class UserInputBar extends Component {
     return false
   }
   handleKeyUp(event) {
-    if (event.keyCode == 13) { // "Return" key
+    if (event.keyCode === 13) { // "Return" key
       this.props.handleUserInputSubmit(this.input.value)
       this.historyAddMessage(this.input.value)
       this.input.select()
-    } else if (event.keyCode == 38) { // up arrow key
+    } else if (event.keyCode === 38) { // up arrow key
       // scroll back in user input history
       const msg = this.historyGetPrevMessage() 
       this.input.value = msg  
       this.input.select()   
-    } else if (event.keyCode == 40) { // down arrow key
+    } else if (event.keyCode === 40) { // down arrow key
       // scroll foward in user input history
       const msg = this.historyGetNextMessage()      
       this.input.value = msg
-    } else if (event.keyCode == 27) { // "Esc" key
+    } else if (event.keyCode === 27) { // "Esc" key
       // set window to default view
       // this.changeWindowLayout()
     }
