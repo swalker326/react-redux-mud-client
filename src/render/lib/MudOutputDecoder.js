@@ -1,21 +1,20 @@
+import AnsiUp from 'ansi_up'
 export default class MudOutputDecoder {
   static mudOutputToHtml(input) {
     let output = input
-    /*
-    is this ANSI or XML? I need to write a function to check for
-    this later. Assuming XML for now.
-    */
-    const isXml = true
+    // any valid XML should start with <
+    const isXml = input[0] === '<' ? true : false;
     if( isXml ) {
       output = this.xmlToHtml(output)
     } else {
-      output = this.ansiToHtml(output)
+      output = this.ansiToHtml(output);
     }
 
     return output
   }
 
   static xmlToHtml(input) {
+    console.log('xmlToHtml Called' ); // eslint-disable-line
     // little modification is required when the data from the MUME server
     // is in XML mode, because the browser can render it as HTML.
     // all we have to do is replace the color codes with tags
@@ -23,8 +22,17 @@ export default class MudOutputDecoder {
     let output = input
     output = this.renderAnsiCodes(output)
     output = this.removeArtifactsSetA(output)
+    console.log('output:', output); // eslint-disable-line
     return output
-  } 
+  }
+  static ansiToHtml(input) {
+    let output = input;
+    //using ansi_up package to convert ansi strings to html
+    //https://github.com/drudru/ansi_up
+    const convert = new AnsiUp();
+    output = convert.ansi_to_html(output);
+    return output;
+  }
 
   static removeArtifactsSetA(input) {
     let output = input
