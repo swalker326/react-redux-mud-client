@@ -3,7 +3,6 @@ import React from 'react'
 //Local Impots
 
 const PlayerStatus = (props) => {
-  console.log('props', props); // eslint-disable-line
   return (
     <div className='PlayerStatus' >
       <div className='PlayerStatus-Monitors' style={{display: "flex", flexWrap: "wrap"}}>

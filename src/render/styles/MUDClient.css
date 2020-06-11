@@ -47,11 +47,19 @@ body {
   border-radius: 8px 0;
 }
 .react-tabs__tab-panel--selected{
-  height: 45vh;
+  height: 40vh;
   overflow-y: auto;
 }
+.affect_tab {
+  border: solid 1px;
+  justify-content: center;
+  padding: 10px;
+  font-size: 12px;
+  line-height: .66;
+  white-space: pre-wrap;
+  color: #8f8f8f;
+}
 .rightColumn > .MapWindow{
-  /* display: flex; */
   justify-content: center;
   padding: 10px;
   font-size: 12px;
@@ -69,39 +77,6 @@ body {
     width: calc( 100vw - 700px);
   }
 } */
-
-
-
-/* Window Layouts */
-/*
-body[data-layout=a] .MUDClient > .leftColumn {
-  width: 50%;
-}
-body[data-layout=a] .MUDClient > .rightColumn {
-  width: 50%;
-}
-body[data-layout=b] .MUDClient > .leftColumn {
-  width: 100%;
-}
-body[data-layout=b] .MUDClient > .rightColumn {
-  width: 0%;
-}
-body[data-layout=b] .UserInputBar input {
-  width: 100vw;
-}
-body[data-layout=b] .MapHUD {
-  display: none;
-}
-body[data-layout=c] .MUDClient > .leftColumn {
-  width: 0%;
-}
-body[data-layout=c] .MUDClient > .rightColumn {
-  width: 100%;
-}
-body[data-layout=c] .MUDClient .HistoryWindow {
-  display: none;
-}
-*/
 
 .HistoryWindow {
   overflow-x: hidden;

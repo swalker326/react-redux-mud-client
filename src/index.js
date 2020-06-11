@@ -6,7 +6,7 @@ import ReactDOM, {render} from 'react-dom'
 import serverConfig   from './config/serverConfig.json'
 import { userConfig } from './config/userConfig'
 import configureStore from './state/configureStore'
-import MUDClient from './render/MUDClient'
+import {MUDClient} from './render/MUDClient'
 // styles
 import './render/styles/reset.css'
 import './render/styles/MUDClient.css'
